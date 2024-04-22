@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "resume-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@kobalte/core": "^0.12.6",
+    "@solidjs/router": "^0.13.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "solid-js": "^1.8.15",

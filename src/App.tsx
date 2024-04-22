@@ -1,10 +1,11 @@
-import { Button } from "./components/ui/button";
+import { ParentComponent } from "solid-js";
+import { Navbar } from "~/components/navbar";
 
-const App = () => {
+const App: ParentComponent = (props) => {
   return (
     <>
-      <div>Hello again</div>
-      <Button />
+      <Navbar />
+      {props.children}
     </>
   );
 };
