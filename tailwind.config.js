@@ -7,8 +7,8 @@ module.exports = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px"
-      }
+        "2xl": "1400px",
+      },
     },
     extend: {
       colors: {
@@ -19,80 +19,98 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))"
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))"
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))"
+          foreground: "hsl(var(--destructive-foreground))",
         },
         info: {
           DEFAULT: "hsl(var(--info))",
-          foreground: "hsl(var(--info-foreground))"
+          foreground: "hsl(var(--info-foreground))",
         },
         success: {
           DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))"
+          foreground: "hsl(var(--success-foreground))",
         },
         warning: {
           DEFAULT: "hsl(var(--warning))",
-          foreground: "hsl(var(--warning-foreground))"
+          foreground: "hsl(var(--warning-foreground))",
         },
         error: {
           DEFAULT: "hsl(var(--error))",
-          foreground: "hsl(var(--error-foreground))"
+          foreground: "hsl(var(--error-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))"
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))"
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))"
+          foreground: "hsl(var(--popover-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))"
-        }
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)"
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" }
+          to: { height: "var(--kb-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 }
+          to: { height: 0 },
         },
         "content-show": {
           from: { opacity: 0, transform: "scale(0.96)" },
-          to: { opacity: 1, transform: "scale(1)" }
+          to: { opacity: 1, transform: "scale(1)" },
         },
         "content-hide": {
           from: { opacity: 1, transform: "scale(1)" },
-          to: { opacity: 0, transform: "scale(0.96)" }
-        }
+          to: { opacity: 0, transform: "scale(0.96)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "content-show": "content-show 0.2s ease-out",
-        "content-hide": "content-hide 0.2s ease-out"
-      }
-    }
+        "content-hide": "content-hide 0.2s ease-out",
+      },
+      fontFamily: {
+        titillium: ["Titillium Web", "sans-serif"],
+      },
+      backdropFilter: {
+        none: "none",
+        blur: "blur(20px)",
+      },
+      borderWidth: {
+        1: "1px",
+        2: "2px",
+        3: "3px",
+        0.5: "0.5px",
+        0.25: "0.25px",
+        0.1: "0.1px",
+      },
+      textShadow: {
+        glow: "0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5)",
+      },
+    },
   },
-  plugins: [require("tailwindcss-animate")]
-}
+  plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
+};

@@ -1,0 +1,22 @@
+# Ignore node modules
+node_modules
+
+# Ignore logs
+*.log
+
+# Ignore any .env files
+*.env
+
+# Ignore git and GitHub files
+.git
+.gitignore
+.github
+
+# Ignore Dockerfiles and docker-compose files
+Dockerfile
+docker-compose.yml
+
+# Ignore IDE specific files
+.vscode
+.idea
+*.iml
