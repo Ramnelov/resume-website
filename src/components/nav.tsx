@@ -5,18 +5,18 @@ import { FiMenu } from "solid-icons/fi";
 export const Nav: Component = () => {
   const [isOpen, setIsOpen] = createSignal(false);
   const location = useLocation();
-  const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null)
+  const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null);
 
   /**
    * Handle click outside of the nav to close it
-   * @param e 
+   * @param e
    */
   const handleOutsideClick = (e: MouseEvent) => {
-    const ref = navRef()
+    const ref = navRef();
     if (ref && !ref.contains(e.target as Node)) {
       setIsOpen(false);
     }
-  }
+  };
 
   /**
    * Add or remove event listener for outside click
@@ -27,14 +27,17 @@ export const Nav: Component = () => {
     } else {
       document.removeEventListener("click", handleOutsideClick);
     }
-  })
+  });
 
   return (
     <>
-      <FiMenu onClick={() => setIsOpen(!isOpen())} class="size-14 px-1 py-1 transition-colors duration-100 text-gray-400 hover:text-white" />
+      <FiMenu
+        onClick={() => setIsOpen(!isOpen())}
+        class="size-14 px-1 py-1 transition-colors duration-100 text-gray-400 hover:text-white"
+      />
       <nav
         ref={setNavRef}
-        class={`mt-16 text-3xl font-titillium backdrop-blur fixed border border-l-0 border-gray-300 border-opacity-20 flex flex-col items-start p-4 transition-transform duration-200 ${
+        class={`z-50 mt-16 text-3xl font-titillium backdrop-blur fixed border border-l-0 border-gray-300 border-opacity-20 flex flex-col items-start p-4 transition-transform duration-200 ${
           isOpen() ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ transform: `translateX(${isOpen() ? "0%" : "-100%"})` }}
