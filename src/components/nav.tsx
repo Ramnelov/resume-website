@@ -53,16 +53,6 @@ export const Nav: Component = () => {
           Home
         </A>
         <A
-          href="/about"
-          class={`transition-colors duration-100 my-2 font-semibold ${
-            location.pathname === "/about"
-              ? "text-white"
-              : "text-gray-400 hover:text-white"
-          }`}
-        >
-          About
-        </A>
-        <A
           href="/education"
           class={`transition-colors duration-100 my-2 font-semibold ${
             location.pathname === "/education"
