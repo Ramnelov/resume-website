@@ -37,7 +37,7 @@ export const Nav: Component = () => {
           class="size-14 transition-colors duration-100 text-gray-400 hover:text-white"
         />
         <a href="https://github.com/Ramnelov/resume-website" target="_blank">
-          <FiGithub class="size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
+          <FiGithub class="pt-1 size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
         </a>
       </div>
       <nav
