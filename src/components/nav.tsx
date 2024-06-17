@@ -1,6 +1,6 @@
 import { Component, createEffect, createSignal } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
-import { FiMenu } from "solid-icons/fi";
+import { FiMenu, FiGithub } from "solid-icons/fi";
 
 export const Nav: Component = () => {
   const [isOpen, setIsOpen] = createSignal(false);
@@ -30,14 +30,19 @@ export const Nav: Component = () => {
   });
 
   return (
-    <>
-      <FiMenu
-        onClick={() => setIsOpen(!isOpen())}
-        class="size-14 px-1 py-1 transition-colors duration-100 text-gray-400 hover:text-white"
-      />
+    <div class="pb-1">
+      <div class="flex justify-between p-2">
+        <FiMenu
+          onClick={() => setIsOpen(!isOpen())}
+          class="size-14 transition-colors duration-100 text-gray-400 hover:text-white"
+        />
+        <a href="https://github.com/Ramnelov/resume-website" target="_blank">
+          <FiGithub class="size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
+        </a>
+      </div>
       <nav
         ref={setNavRef}
-        class={`z-50 mt-16 text-3xl font-titillium backdrop-blur fixed border border-l-0 border-gray-300 border-opacity-20 flex flex-col items-start p-4 transition-transform duration-200 ${
+        class={`z-50 mt-16 text-3xl font-titillium backdrop-blur fixed border border-l-0 border-gray-300 border-opacity-20 flex flex-col items-start p-4 transition-transform duration-200 rounded-r-lg ${
           isOpen() ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ transform: `translateX(${isOpen() ? "0%" : "-100%"})` }}
@@ -83,6 +88,6 @@ export const Nav: Component = () => {
           Projects
         </A>
       </nav>
-    </>
+    </div>
   );
 };
