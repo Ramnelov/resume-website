@@ -5,5 +5,5 @@ import {
 
 export default defineConfig({
   preset,
-  images: ["public/favicon/android-chrome-512x512.png"],
+  images: ["public/android-chrome-512x512.png"],
 });
