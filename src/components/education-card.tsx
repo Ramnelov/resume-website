@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "~/components/ui/card";
 import { EducationData } from "~/data/data-types";
+import { formatDate } from "~/utils/dates";
 
 export const EducationCard: Component<EducationData> = (education) => {
   return (
@@ -22,7 +23,8 @@ export const EducationCard: Component<EducationData> = (education) => {
           </CardHeader>
           <CardContent>
             <p class="text-sm pb-1">
-              {education.start} - {education.end}
+              {formatDate(education.start_date)} -{" "}
+              {formatDate(education.end_date)}
             </p>
             <p class="text-sm">{education.description}</p>
           </CardContent>

@@ -1,10 +1,25 @@
-import educationData from "~/data/education.json";
-import type { EducationData } from "~/data/data-types";
+import { supabase } from "~/utils/supabase";
+import { EducationData, ResumeTextData } from "./data-types";
 
 /**
- * Placeholder function to fetch education data
+ * Fetches education data from the database
  * @returns {Array} - Returns an array of objects containing education data
  */
-export function fetchEducationData(): Array<EducationData> {
-  return educationData;
+export async function fetchEducationData(): Promise<EducationData[]> {
+  const request = await supabase.from("education").select();
+  return request.data as EducationData[];
+}
+
+/**
+ * Fetches resume text data from the database
+ * @returns {Array} - Returns an array of objects containing resume text data
+ */
+export async function fetchResumeTextData(
+  description: string
+): Promise<string> {
+  const request = await supabase
+    .from("resume-text")
+    .select("content")
+    .eq("description", description);
+  return (request.data as ResumeTextData[])?.[0].content;
 }
