@@ -11,15 +11,19 @@ const App: ParentComponent = (props) => {
 
   return (
     <>
-      <div class="flex flex-col h-screen">
+      <div class="flex flex-col h-dvh">
         <ColorModeScript storageType={storageManager.type} />
         <ColorModeProvider
           storageManager={storageManager}
           initialColorMode="dark"
         >
-          <Nav />
-          <div class="flex-grow flex items-center justify-center">
-            <Suspense>{props.children}</Suspense>
+          <div class="flex-none">
+            <Nav />
+          </div>
+          <div class="grow flex flex-col items-center justify-center text-center font-titillium">
+            <div class="max-w-xs md:max-w-md lg:max-w-lg">
+              <Suspense>{props.children}</Suspense>
+            </div>
           </div>
         </ColorModeProvider>
       </div>

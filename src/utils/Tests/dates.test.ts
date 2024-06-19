@@ -8,6 +8,10 @@ describe("formatDate", () => {
     expect(formatDate(futureDate.toISOString())).toBe("Present.");
   });
 
+  it('returns "Present." for null dates', () => {
+    expect(formatDate(null)).toBe("Present.");
+  });
+
   it("formats past dates correctly", () => {
     expect(formatDate("2020-01-01")).toMatch(/^\w{3}\. \d{4}$/);
   });
@@ -32,5 +36,15 @@ describe("sortByDate", () => {
     const sorted = [...items].sort(sortByDate);
     expect(sorted[0].start_date).toBe("2021-01-01");
     expect(sorted[1].start_date).toBe("2020-01-01");
+  });
+
+  it("treats null end_date as the latest", () => {
+    const items = [
+      { start_date: "2020-01-01", end_date: "2020-12-31" },
+      { start_date: "2021-01-01", end_date: null },
+    ];
+    const sorted = [...items].sort(sortByDate);
+    expect(sorted[0].end_date).toBeNull();
+    expect(sorted[1].end_date).toBe("2020-12-31");
   });
 });

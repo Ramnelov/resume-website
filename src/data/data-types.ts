@@ -5,21 +5,21 @@ export interface EducationData {
   title: string;
   location: string;
   start_date: string;
-  end_date: string;
+  end_date: string | null;
   description: string;
-  link: string;
+  link: string | null;
 }
 
 export interface ExperienceData {
   id: number;
   created_at: string;
-  title: string;
   company: string;
+  role: string;
   location: string;
   start_date: string;
-  end_date: string;
+  end_date: string | null;
   description: string;
-  link: string;
+  link: string | null;
 }
 
 export interface ResumeTextData {
@@ -27,4 +27,11 @@ export interface ResumeTextData {
   created_at: string;
   description: string;
   content: string;
+}
+
+export interface LinkData {
+  id: number;
+  created_at: string;
+  description: string;
+  link: string;
 }

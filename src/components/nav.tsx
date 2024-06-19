@@ -1,11 +1,21 @@
-import { Component, createEffect, createSignal } from "solid-js";
+import {
+  Component,
+  createEffect,
+  createResource,
+  createSignal,
+} from "solid-js";
 import { A, useLocation } from "@solidjs/router";
 import { FiMenu, FiGithub } from "solid-icons/fi";
+import { fetchLinkData } from "~/data/data";
 
 export const Nav: Component = () => {
   const [isOpen, setIsOpen] = createSignal(false);
   const location = useLocation();
   const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null);
+
+  const fetchGithubLinkData = () => fetchLinkData("github-resume-website");
+
+  const [githubLink] = createResource(fetchGithubLinkData);
 
   /**
    * Handle click outside of the nav to close it
@@ -36,7 +46,7 @@ export const Nav: Component = () => {
           onClick={() => setIsOpen(!isOpen())}
           class="size-14 transition-colors duration-100 text-gray-400 hover:text-white"
         />
-        <a href="https://github.com/Ramnelov/resume-website" target="_blank">
+        <a href={githubLink()} target="_blank">
           <FiGithub class="pt-1 size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
         </a>
       </div>
@@ -68,9 +78,9 @@ export const Nav: Component = () => {
           Education
         </A>
         <A
-          href="/experiences"
+          href="/experience"
           class={`transition-colors duration-100 my-2 font-semibold ${
-            location.pathname === "/experiences"
+            location.pathname === "/experience"
               ? "text-white"
               : "text-gray-400 hover:text-white"
           }`}

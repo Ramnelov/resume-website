@@ -6,27 +6,27 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import { EducationData } from "~/data/data-types";
+import { ExperienceData } from "~/data/data-types";
 import { formatDate } from "~/utils/dates";
 
-export const EducationCard: Component<EducationData> = (education) => {
+export const ExperienceCard: Component<ExperienceData> = (experience) => {
   return (
     <>
-      <a href={education.link ?? undefined} target="_blank">
+      <a href={experience.link ?? undefined} target="_blank">
         <Card class="transition-opacity duration-300 ease-in-out hover:opacity-50">
           <CardHeader>
-            <CardTitle class="text-xl">{education.level}</CardTitle>
+            <CardTitle class="text-xl">{experience.company}</CardTitle>
             <CardDescription>
-              <h3 class="text-lg">{education.title}</h3>
-              <p class="text-md">{education.location}</p>
+              <h3 class="text-lg">{experience.role}</h3>
+              <p class="text-md">{experience.location}</p>
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p class="text-sm pb-1">
-              {formatDate(education.start_date)} -{" "}
-              {formatDate(education.end_date)}
+              {formatDate(experience.start_date)} -{" "}
+              {formatDate(experience.end_date)}
             </p>
-            <p class="text-sm">{education.description}</p>
+            <p class="text-sm">{experience.description}</p>
           </CardContent>
         </Card>
       </a>
