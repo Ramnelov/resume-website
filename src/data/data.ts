@@ -12,6 +12,7 @@ import {
  */
 export async function fetchEducationData(): Promise<EducationData[]> {
   const request = await supabase.from("education").select();
+
   return request.data as EducationData[];
 }
 
