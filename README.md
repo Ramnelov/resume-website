@@ -1,28 +1,11 @@
-## Usage
+# Resume Website
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+Hello and wellcome to the repository for my resume website project! A frontend application utilizing [**SolidJS**](https://www.solidjs.com/) for coding, [**Supabase**](https://supabase.com/) for data management and [**Vercel**](https://vercel.com/) for hosting.
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+The website is meant to be used as a well styled resume available all around the world 24/7 and will be developed over time.
 
-## Available Scripts
+My goal is to explore web development further and experiment.
 
-In the project directory, you can run:
+The website can be found at [**ramnelov.com**](https://www.ramnelov.com).
 
-### `npm run dev`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+Se you around!
