@@ -1,37 +1,40 @@
 export interface EducationData {
-  id: number;
-  created_at: string;
+  link: string | null;
   level: string;
   title: string;
+  end_date: string | null;
   location: string;
   start_date: string;
-  end_date: string | null;
   description: string;
-  link: string | null;
 }
 
 export interface ExperienceData {
-  id: number;
-  created_at: string;
-  company: string;
+  link: string | null;
   role: string;
+  company: string;
+  end_date: string | null;
   location: string;
   start_date: string;
-  end_date: string | null;
   description: string;
-  link: string | null;
 }
 
-export interface ResumeTextData {
-  id: number;
-  created_at: string;
-  description: string;
-  content: string;
+export interface TextData {
+  [description: string]: string;
 }
 
 export interface LinkData {
+  [description: string]: string;
+}
+
+export interface ResumeDataResponse {
   id: number;
   created_at: string;
-  description: string;
-  link: string;
+  data: ResumeData;
+}
+
+export interface ResumeData {
+  links: LinkData;
+  texts: TextData;
+  education: EducationData[];
+  experience: ExperienceData[];
 }
