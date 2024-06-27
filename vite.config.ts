@@ -16,7 +16,6 @@ const pwaOptions: Partial<VitePWAOptions> = {
     "favicon.ico",
     "apple-touch-icon.png",
     "mask-icon.svg",
-    "images/*",
   ],
   manifest: {
     name: "Felix Ramnelöv",
@@ -56,7 +55,6 @@ export default defineConfig({
       usePolling: true,
     },
     port: 3000,
-    host: true,
   },
   define: {
     global: {},
@@ -68,6 +66,5 @@ export default defineConfig({
   },
   preview: {
     port: 8080,
-    host: true,
   },
 });
