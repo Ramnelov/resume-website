@@ -22,7 +22,7 @@ export const ExperienceCard: Component<ExperienceData> = (experience) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p class="text-sm pb-1">
+            <p class="pb-1 text-sm">
               {formatDate(experience.start_date)} -{" "}
               {formatDate(experience.end_date)}
             </p>

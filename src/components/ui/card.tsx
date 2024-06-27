@@ -9,7 +9,7 @@ const Card: Component<ComponentProps<"div">> = (props) => {
     <div
       class={cn(
         "rounded-lg border bg-card text-card-foreground shadow-sm",
-        local.class
+        local.class,
       )}
       {...others}
     />
@@ -20,7 +20,7 @@ const CardHeader: Component<ComponentProps<"div">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <div
-      class={cn("flex flex-col space-y-1.5 pt-6 pb-2", local.class)}
+      class={cn("flex flex-col space-y-1.5 pb-2 pt-6", local.class)}
       {...others}
     />
   );
@@ -32,7 +32,7 @@ const CardTitle: Component<ComponentProps<"h3">> = (props) => {
     <h3
       class={cn(
         "text-lg font-semibold leading-none tracking-tight",
-        local.class
+        local.class,
       )}
       {...others}
     />
