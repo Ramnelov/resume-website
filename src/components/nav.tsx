@@ -1,21 +1,13 @@
-import {
-  Component,
-  createEffect,
-  createResource,
-  createSignal,
-} from "solid-js";
+import { Component, createEffect, createSignal } from "solid-js";
 import { A, useLocation } from "@solidjs/router";
 import { FiMenu, FiGithub } from "solid-icons/fi";
-import { fetchLinkData } from "~/data/data";
+import { useResumeData } from "~/data/data-context";
 
 export const Nav: Component = () => {
   const [isOpen, setIsOpen] = createSignal(false);
   const location = useLocation();
   const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null);
-
-  const fetchGithubLinkData = () => fetchLinkData("github-resume-website");
-
-  const [githubLink] = createResource(fetchGithubLinkData);
+  const resumeDataResource = useResumeData();
 
   /**
    * Handle click outside of the nav to close it
@@ -46,7 +38,10 @@ export const Nav: Component = () => {
           onClick={() => setIsOpen(!isOpen())}
           class="size-14 transition-colors duration-100 text-gray-400 hover:text-white"
         />
-        <a href={githubLink()} target="_blank">
+        <a
+          href={resumeDataResource()?.links["github-resume-website"]}
+          target="_blank"
+        >
           <FiGithub class="pt-1 size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
         </a>
       </div>
