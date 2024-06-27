@@ -3,9 +3,9 @@ import { ExperienceCard } from "~/components/experience-card";
 import { fetchExperienceData } from "~/data/data";
 import { sortByDate } from "~/utils/dates";
 
-export const Experience: Component = () => {
-  const [experienceData] = createResource(fetchExperienceData);
+const [experienceData] = createResource(fetchExperienceData);
 
+export const Experience: Component = () => {
   return (
     <>
       <Show

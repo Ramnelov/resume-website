@@ -3,9 +3,9 @@ import { EducationCard } from "~/components/education-card";
 import { fetchEducationData } from "~/data/data";
 import { sortByDate } from "~/utils/dates";
 
-export const Education: Component = () => {
-  const [educationData] = createResource(fetchEducationData);
+const [educationData] = createResource(fetchEducationData);
 
+export const Education: Component = () => {
   return (
     <>
       <Show
