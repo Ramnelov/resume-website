@@ -22,7 +22,7 @@ export const EducationCard: Component<EducationData> = (education) => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p class="text-sm pb-1">
+            <p class="pb-1 text-sm">
               {formatDate(education.start_date)} -{" "}
               {formatDate(education.end_date)}
             </p>

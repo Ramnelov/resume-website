@@ -12,11 +12,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
     enabled: true,
   },
 
-  includeAssets: [
-    "favicon.ico",
-    "apple-touch-icon.png",
-    "mask-icon.svg",
-  ],
+  includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
   manifest: {
     name: "Felix Ramnelöv",
     short_name: "FR",
@@ -49,7 +45,11 @@ const pwaOptions: Partial<VitePWAOptions> = {
 };
 
 export default defineConfig({
-  plugins: [solid(), devtools({ autoname: true }), VitePWA(pwaOptions)],
+  plugins: [
+    solid(),
+    devtools({ autoname: true }),
+    VitePWA(pwaOptions),
+  ],
   server: {
     watch: {
       usePolling: true,

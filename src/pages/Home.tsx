@@ -11,7 +11,7 @@ export const Home: Component = () => {
       <Image.Root>
         <Image.Img
           src={resumeDataResource()?.links["profile-picture"]}
-          class="rounded-lg object-cover w-64 h-64 mx-auto"
+          class="mx-auto h-64 w-64 rounded-lg object-cover"
         />
         <Image.Fallback class="flex h-64 items-center justify-center">
           <FiLoader class="mx-auto size-10 animate-spin" />

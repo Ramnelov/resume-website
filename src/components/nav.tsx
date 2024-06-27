@@ -36,25 +36,25 @@ export const Nav: Component = () => {
       <div class="flex justify-between p-2">
         <FiMenu
           onClick={() => setIsOpen(!isOpen())}
-          class="size-14 transition-colors duration-100 text-gray-400 hover:text-white"
+          class="size-14 text-gray-400 transition-colors duration-100 hover:text-white"
         />
         <a
           href={resumeDataResource()?.links["github-resume-website"]}
           target="_blank"
         >
-          <FiGithub class="pt-1 size-14 transition-colors duration-100 text-gray-400 hover:text-white" />
+          <FiGithub class="size-14 pt-1 text-gray-400 transition-colors duration-100 hover:text-white" />
         </a>
       </div>
       <nav
         ref={setNavRef}
-        class={`z-50 mt-16 text-3xl font-titillium backdrop-blur fixed border border-l-0 border-gray-300 border-opacity-20 flex flex-col items-start p-4 transition-transform duration-200 rounded-r-lg ${
+        class={`fixed z-50 mt-16 flex flex-col items-start rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 font-titillium text-3xl backdrop-blur transition-transform duration-200 ${
           isOpen() ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ transform: `translateX(${isOpen() ? "0%" : "-100%"})` }}
       >
         <A
           href="/"
-          class={`transition-colors duration-100 my-2 font-semibold ${
+          class={`my-2 font-semibold transition-colors duration-100 ${
             location.pathname === "/"
               ? "text-white"
               : "text-gray-400 hover:text-white"
@@ -64,7 +64,7 @@ export const Nav: Component = () => {
         </A>
         <A
           href="/education"
-          class={`transition-colors duration-100 my-2 font-semibold ${
+          class={`my-2 font-semibold transition-colors duration-100 ${
             location.pathname === "/education"
               ? "text-white"
               : "text-gray-400 hover:text-white"
@@ -74,7 +74,7 @@ export const Nav: Component = () => {
         </A>
         <A
           href="/experience"
-          class={`transition-colors duration-100 my-2 font-semibold ${
+          class={`my-2 font-semibold transition-colors duration-100 ${
             location.pathname === "/experience"
               ? "text-white"
               : "text-gray-400 hover:text-white"
@@ -84,7 +84,7 @@ export const Nav: Component = () => {
         </A>
         <A
           href="/projects"
-          class={`transition-colors duration-100 my-2 font-semibold ${
+          class={`my-2 font-semibold transition-colors duration-100 ${
             location.pathname === "/projects"
               ? "text-white"
               : "text-gray-400 hover:text-white"

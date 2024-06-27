@@ -28,7 +28,7 @@ export function formatDate(date: string | null): string {
  */
 export function sortByDate(
   a: { end_date: string | null; start_date: string },
-  b: { end_date: string | null; start_date: string }
+  b: { end_date: string | null; start_date: string },
 ): number {
   const endDateA = a.end_date ? new Date(a.end_date).getTime() : Infinity;
   const endDateB = b.end_date ? new Date(b.end_date).getTime() : Infinity;

@@ -103,7 +103,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 
@@ -116,14 +118,19 @@
 @keyframes glow {
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
-      0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2),
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(255, 255, 255, 0.2),
       0 0 40px rgba(255, 255, 255, 0.2);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2),
-      0 0 30px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.2),
-      0 0 50px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.2);
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(255, 255, 255, 0.2),
+      0 0 40px rgba(255, 255, 255, 0.2),
+      0 0 50px rgba(255, 255, 255, 0.2),
+      0 0 60px rgba(255, 255, 255, 0.2);
   }
 }
 
