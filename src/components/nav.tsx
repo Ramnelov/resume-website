@@ -45,7 +45,8 @@ export const Nav: Component = () => {
         <NavLink href="/">Home</NavLink>
         <NavLink href="/education">Education</NavLink>
         <NavLink href="/experience">Experiences</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/under-development">Projects</NavLink>
+        <NavLink href="/under-development">Contact</NavLink>
       </nav>
     </div>
   )
