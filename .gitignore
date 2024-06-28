@@ -27,3 +27,6 @@ dist-ssr
 
 # OS or Editor files
 .env
+
+# ESLint
+.eslintcache

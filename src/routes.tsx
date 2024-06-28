@@ -3,7 +3,7 @@ import { Home } from '~/pages/Home'
 import { Education } from '~/pages/Education'
 import { Experience } from '~/pages/Experence'
 // import { Projects } from "~/pages/Projects";
-import { UnderConstruction } from './pages/UnderConstruction'
+import { UnderConstruction } from '~/pages/UnderConstruction'
 
 export const Routes = () => {
   return (
