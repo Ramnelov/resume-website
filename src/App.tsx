@@ -1,7 +1,7 @@
 import { ParentComponent, Show, Suspense, createResource } from 'solid-js'
 import { Nav } from '~/components/nav'
 import { ColorModeProvider, ColorModeScript, createLocalStorageManager } from '@kobalte/core'
-import { fetchResumeData } from '~/data/data'
+import { fetchResumeData } from '~/data/data-fetch'
 import { ResumeDataProvider } from '~/data/data-context'
 import PageContainer from './components/page-container'
 
