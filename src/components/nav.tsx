@@ -1,35 +1,33 @@
-import { Component, createEffect, createSignal } from "solid-js";
-import { A, useLocation } from "@solidjs/router";
-import { FiMenu, FiGithub } from "solid-icons/fi";
-import { useResumeData } from "~/data/data-context";
+import { Component, createEffect, createSignal } from 'solid-js'
+import { A, useLocation } from '@solidjs/router'
+import { FiMenu } from 'solid-icons/fi'
 
 export const Nav: Component = () => {
-  const [isOpen, setIsOpen] = createSignal(false);
-  const location = useLocation();
-  const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null);
-  const resumeDataResource = useResumeData();
+  const [isOpen, setIsOpen] = createSignal(false)
+  const location = useLocation()
+  const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null)
 
   /**
    * Handle click outside of the nav to close it
    * @param e
    */
   const handleOutsideClick = (e: MouseEvent) => {
-    const ref = navRef();
+    const ref = navRef()
     if (ref && !ref.contains(e.target as Node)) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
-  };
+  }
 
   /**
    * Add or remove event listener for outside click
    */
   createEffect(() => {
     if (isOpen()) {
-      document.addEventListener("click", handleOutsideClick);
+      document.addEventListener('click', handleOutsideClick)
     } else {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick)
     }
-  });
+  })
 
   return (
     <div class="pb-1">
@@ -38,26 +36,18 @@ export const Nav: Component = () => {
           onClick={() => setIsOpen(!isOpen())}
           class="size-14 text-gray-400 transition-colors duration-100 hover:text-white"
         />
-        <a
-          href={resumeDataResource()?.links["github-resume-website"]}
-          target="_blank"
-        >
-          <FiGithub class="size-14 pt-1 text-gray-400 transition-colors duration-100 hover:text-white" />
-        </a>
       </div>
       <nav
         ref={setNavRef}
         class={`fixed z-50 mt-16 flex flex-col items-start rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 font-titillium text-3xl backdrop-blur transition-transform duration-200 ${
-          isOpen() ? "translate-x-0" : "translate-x-full"
+          isOpen() ? 'translate-x-0' : 'translate-x-full'
         }`}
-        style={{ transform: `translateX(${isOpen() ? "0%" : "-100%"})` }}
+        style={{ transform: `translateX(${isOpen() ? '0%' : '-100%'})` }}
       >
         <A
           href="/"
           class={`my-2 font-semibold transition-colors duration-100 ${
-            location.pathname === "/"
-              ? "text-white"
-              : "text-gray-400 hover:text-white"
+            location.pathname === '/' ? 'text-white' : 'text-gray-400 hover:text-white'
           }`}
         >
           Home
@@ -65,9 +55,7 @@ export const Nav: Component = () => {
         <A
           href="/education"
           class={`my-2 font-semibold transition-colors duration-100 ${
-            location.pathname === "/education"
-              ? "text-white"
-              : "text-gray-400 hover:text-white"
+            location.pathname === '/education' ? 'text-white' : 'text-gray-400 hover:text-white'
           }`}
         >
           Education
@@ -75,9 +63,7 @@ export const Nav: Component = () => {
         <A
           href="/experience"
           class={`my-2 font-semibold transition-colors duration-100 ${
-            location.pathname === "/experience"
-              ? "text-white"
-              : "text-gray-400 hover:text-white"
+            location.pathname === '/experience' ? 'text-white' : 'text-gray-400 hover:text-white'
           }`}
         >
           Experiences
@@ -85,14 +71,12 @@ export const Nav: Component = () => {
         <A
           href="/projects"
           class={`my-2 font-semibold transition-colors duration-100 ${
-            location.pathname === "/projects"
-              ? "text-white"
-              : "text-gray-400 hover:text-white"
+            location.pathname === '/projects' ? 'text-white' : 'text-gray-400 hover:text-white'
           }`}
         >
           Projects
         </A>
       </nav>
     </div>
-  );
-};
+  )
+}
