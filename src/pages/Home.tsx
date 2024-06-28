@@ -1,6 +1,6 @@
 import { Component } from 'solid-js'
 import { Image } from '@kobalte/core'
-import { FiLoader } from 'solid-icons/fi'
+import { ImSpinner2 } from 'solid-icons/im'
 import { useResumeData } from '~/data/data-context'
 
 export const Home: Component = () => {
@@ -14,7 +14,7 @@ export const Home: Component = () => {
           class="mx-auto h-64 w-64 rounded-lg object-cover"
         />
         <Image.Fallback class="flex h-64 items-center justify-center">
-          <FiLoader class="mx-auto size-10 animate-spin" />
+          <ImSpinner2 class="mx-auto size-10 animate-spin" />
         </Image.Fallback>
       </Image.Root>
 

@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'solid-js'
 import type { Resource, JSX } from 'solid-js'
-import { ResumeData } from './data-types'
+import { ResumeData } from '~/data/data-types'
 
 const ResumeDataContext = createContext<Resource<ResumeData>>()
 
