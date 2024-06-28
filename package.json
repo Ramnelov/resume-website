@@ -36,7 +36,7 @@
     "@types/node": "^20.12.7",
     "@vite-pwa/assets-generator": "^0.2.4",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.5.0",
+    "eslint": "^8.56.0",
     "eslint-plugin-solid": "^0.14.1",
     "globals": "^15.6.0",
     "jsdom": "^24.1.0",
