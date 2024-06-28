@@ -30,7 +30,7 @@ export const Nav: Component = () => {
   })
 
   return (
-    <div class="pb-1">
+    <div>
       <div class="flex justify-between p-2">
         <FiMenu
           onClick={() => setIsOpen(!isOpen())}
@@ -39,7 +39,7 @@ export const Nav: Component = () => {
       </div>
       <nav
         ref={setNavRef}
-        class={`fixed z-50 mt-16 flex flex-col items-start rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 font-titillium text-3xl backdrop-blur transition-transform duration-200 ${
+        class={`fixed z-50 flex flex-col items-start rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 font-titillium text-3xl backdrop-blur transition-transform duration-200 ${
           isOpen() ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{ transform: `translateX(${isOpen() ? '0%' : '-100%'})` }}
