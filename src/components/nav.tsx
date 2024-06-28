@@ -1,5 +1,5 @@
 import { Component, createEffect, createSignal } from 'solid-js'
-import { FiMenu } from 'solid-icons/fi'
+import { BsList } from 'solid-icons/bs'
 import { NavLink } from '~/components/nav-link'
 
 export const Nav: Component = () => {
@@ -29,9 +29,9 @@ export const Nav: Component = () => {
   })
 
   return (
-    <div>
-      <div class="p-2">
-        <FiMenu
+    <div class="flex-none">
+      <div class="p-1">
+        <BsList
           onClick={() => setIsOpen(!isOpen())}
           class="size-14 text-gray-400 transition-colors duration-100 hover:text-white"
         />
