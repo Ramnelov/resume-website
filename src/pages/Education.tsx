@@ -1,10 +1,10 @@
-import { Component, For } from "solid-js";
-import { EducationCard } from "~/components/education-card";
-import { useResumeData } from "~/data/data-context";
-import { sortByDate } from "~/utils/dates";
+import { Component, For } from 'solid-js'
+import { EducationCard } from '~/components/education-card'
+import { useResumeData } from '~/data/data-context'
+import { sortByDate } from '~/utils/dates'
 
 export const Education: Component = () => {
-  const resumeDataResource = useResumeData();
+  const resumeDataResource = useResumeData()
 
   return (
     <>
@@ -16,5 +16,5 @@ export const Education: Component = () => {
         )}
       </For>
     </>
-  );
-};
+  )
+}

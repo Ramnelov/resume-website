@@ -1,11 +1,11 @@
-import { render } from "solid-js/web";
-import { Router } from "@solidjs/router";
-import App from "~/App";
+import { render } from 'solid-js/web'
+import { Router } from '@solidjs/router'
+import App from '~/App'
 
-import "~/index.css";
-import { Routes } from "~/routes";
+import '~/index.css'
+import { Routes } from '~/routes'
 
-const root = document.getElementById("root");
+const root = document.getElementById('root')
 
 render(
   () => (
@@ -13,5 +13,5 @@ render(
       <Routes />
     </Router>
   ),
-  root!,
-);
+  root!
+)

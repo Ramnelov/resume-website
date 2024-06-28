@@ -1,13 +1,7 @@
-import { Component } from "solid-js";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card";
-import { ExperienceData } from "~/data/data-types";
-import { formatDate } from "~/utils/dates";
+import { Component } from 'solid-js'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card'
+import { ExperienceData } from '~/data/data-types'
+import { formatDate } from '~/utils/dates'
 
 export const ExperienceCard: Component<ExperienceData> = (experience) => {
   return (
@@ -23,13 +17,12 @@ export const ExperienceCard: Component<ExperienceData> = (experience) => {
           </CardHeader>
           <CardContent>
             <p class="pb-1 text-sm">
-              {formatDate(experience.start_date)} -{" "}
-              {formatDate(experience.end_date)}
+              {formatDate(experience.start_date)} - {formatDate(experience.end_date)}
             </p>
             <p class="text-sm">{experience.description}</p>
           </CardContent>
         </Card>
       </a>
     </>
-  );
-};
+  )
+}

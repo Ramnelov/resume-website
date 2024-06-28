@@ -1,5 +1,5 @@
-import { Component } from "solid-js";
-import { FiTool } from "solid-icons/fi";
+import { Component } from 'solid-js'
+import { FiTool } from 'solid-icons/fi'
 
 export const UnderConstruction: Component = () => {
   return (
@@ -7,5 +7,5 @@ export const UnderConstruction: Component = () => {
       <FiTool class="mx-auto size-10" />
       <div>This page is under construction.</div>
     </>
-  );
-};
+  )
+}
