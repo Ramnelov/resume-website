@@ -16,32 +16,43 @@ const pwaOptions: Partial<VitePWAOptions> = {
   manifest: {
     name: 'Felix Ramnelöv',
     short_name: 'Felix Ramnelöv',
-    description: 'Felix Ramnelöv - Resume Website',
-    theme_color: '#000000',
     icons: [
-      {
-        src: 'pwa-64x64.png',
-        sizes: '64x64',
-        type: 'image/png',
-      },
-      {
-        src: 'pwa-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: 'pwa-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-      {
-        src: 'maskable-icon-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-        purpose: 'maskable',
-      },
+      { src: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
+    theme_color: '#ffffff',
+    background_color: '#ffffff',
+    display: 'standalone',
   },
+  // manifest: {
+  //   name: 'Felix Ramnelöv',
+  //   short_name: 'Felix Ramnelöv',
+  //   description: 'Resume Website',
+  //   theme_color: '#FFFFFF',
+  //   icons: [
+  //     {
+  //       src: 'pwa-64x64.png',
+  //       sizes: '64x64',
+  //       type: 'image/png',
+  //     },
+  //     {
+  //       src: 'pwa-192x192.png',
+  //       sizes: '192x192',
+  //       type: 'image/png',
+  //     },
+  //     {
+  //       src: 'pwa-512x512.png',
+  //       sizes: '512x512',
+  //       type: 'image/png',
+  //     },
+  //     {
+  //       src: 'maskable-icon-512x512.png',
+  //       sizes: '512x512',
+  //       type: 'image/png',
+  //       purpose: 'maskable',
+  //     },
+  //   ],
+  // },
 }
 
 export default defineConfig({
