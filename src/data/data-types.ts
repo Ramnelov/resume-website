@@ -18,6 +18,14 @@ export interface ExperienceData {
   description: string
 }
 
+export interface ProjectsData {
+  link: string | null
+  title: string
+  end_date: string | null
+  start_date: string
+  description: string
+}
+
 export interface TextData {
   [description: string]: string
 }
@@ -37,4 +45,5 @@ export interface ResumeData {
   texts: TextData
   education: EducationData[]
   experience: ExperienceData[]
+  projects: ProjectsData[]
 }
