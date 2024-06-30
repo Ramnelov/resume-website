@@ -31,11 +31,9 @@ export const Nav: Component = () => {
 
   return (
     <div class="flex-none">
-      <div class="">
-        <IconContainer>
-          <BsList onClick={() => setIsOpen(!isOpen())} class="size-14" />
-        </IconContainer>
-      </div>
+      <IconContainer>
+        <BsList onClick={() => setIsOpen(!isOpen())} class="size-14" />
+      </IconContainer>
       <nav
         ref={setNavRef}
         class={`fixed z-50 flex flex-col rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 text-3xl font-semibold backdrop-blur transition-transform duration-200 ${
