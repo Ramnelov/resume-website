@@ -9,7 +9,7 @@ export const Home: Component = () => {
     <>
       <ImageComponent src={resumeDataResource()?.links['profile-picture']} />
 
-      <p class="pt-5">{resumeDataResource()?.texts['summary']}</p>
+      <p class="pt-4">{resumeDataResource()?.texts['summary']}</p>
     </>
   )
 }
