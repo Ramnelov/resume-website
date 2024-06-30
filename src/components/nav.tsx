@@ -7,12 +7,24 @@ export const Nav: Component = () => {
   const [navRef, setNavRef] = createSignal<HTMLDivElement | null>(null)
 
   /**
-   * Handle click outside of the nav to close it
+   * Handle click outside of the nav to close it if not a link
    * @param e
    */
   const handleOutsideClick = (e: MouseEvent) => {
     const ref = navRef()
-    if (ref && !ref.contains(e.target as Node)) {
+    const target = e.target as Node
+
+    const isLinkClick = (target: Node): boolean => {
+      while (target && target !== document.body) {
+        if (target.nodeName.toLowerCase() === 'a') {
+          return true
+        }
+        target = target.parentNode as Node
+      }
+      return false
+    }
+
+    if (!isLinkClick(target) && ref && !ref.contains(target)) {
       setIsOpen(false)
     }
   }
