@@ -1,7 +1,6 @@
 import { Component, createEffect, createSignal } from 'solid-js'
 import { BsList } from 'solid-icons/bs'
 import { NavLink } from '~/components/nav-link'
-import IconContainer from './icon-container'
 
 export const Nav: Component = () => {
   const [isOpen, setIsOpen] = createSignal(false)
@@ -31,9 +30,10 @@ export const Nav: Component = () => {
 
   return (
     <div class="flex-none">
-      <IconContainer>
-        <BsList onClick={() => setIsOpen(!isOpen())} class="size-14" />
-      </IconContainer>
+      <BsList
+        onClick={() => setIsOpen(!isOpen())}
+        class={`m-2 inline-flex size-14 text-gray-400 transition-colors duration-100 hover:text-white ${isOpen() ? 'text-white' : 'text-gray-400'}`}
+      />
       <nav
         ref={setNavRef}
         class={`fixed z-50 flex flex-col rounded-r-lg border border-l-0 border-gray-300 border-opacity-20 p-4 text-3xl font-semibold backdrop-blur transition-transform duration-200 ${
