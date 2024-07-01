@@ -3,7 +3,8 @@ import { Nav } from '~/components/nav'
 import { ColorModeProvider, ColorModeScript, createLocalStorageManager } from '@kobalte/core'
 import { fetchResumeData } from '~/data/data-fetch'
 import { ResumeDataProvider } from '~/data/data-context'
-import PageContainer from './components/page-container'
+import PageContainer from '~/components/page-container'
+import { ErrorPage } from '~/pages/Error'
 
 const App: ParentComponent = (props) => {
   const storageManager = createLocalStorageManager('vite-ui-theme')
@@ -17,7 +18,11 @@ const App: ParentComponent = (props) => {
         <ColorModeProvider storageManager={storageManager} initialColorMode="dark">
           <Show
             when={!resumeData.error}
-            fallback={<PageContainer>{(resumeData.error as Error).message}</PageContainer>}
+            fallback={
+              <PageContainer>
+                <ErrorPage {...(resumeData.error as Error)} />
+              </PageContainer>
+            }
           >
             <ResumeDataProvider value={resumeData}>
               <Nav />
