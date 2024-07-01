@@ -1,17 +1,33 @@
 import { supabase } from '~/utils/supabase'
-import { ResumeData, ResumeDataResponse } from '~/data/data-types'
 
 /**
  * Fetches resume data from the database
- * @returns {Promise<ResumeData>} - The resume data
+ * @returns the resume data
  */
-export async function fetchResumeData(): Promise<ResumeData> {
-  const request = await supabase.from('documents').select('data').eq('descriptor', 'resume-data')
+export async function fetchResumeData() {
+  const { data, error } = await supabase
+    .from('documents')
+    .select('data')
+    .eq('descriptor', 'resume-data')
 
-  if (request.error) {
-    console.log(request.error)
-    throw new Error(request.error.message)
+  if (error) {
+    throw new Error(error.message)
   }
 
-  return (request.data as ResumeDataResponse[])?.[0].data
+  return data?.[0].data
+}
+
+/**
+ * Fetches an image from the database
+ * @param image - the image to fetch
+ * @returns the public URL of the image
+ */
+export async function fetchImageUrl(image: string) {
+  const { data, error } = await supabase.storage.from('images').download(image)
+
+  if (error) {
+    throw new Error(error.message)
+  }
+
+  return URL.createObjectURL(data)
 }
