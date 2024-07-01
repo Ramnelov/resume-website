@@ -34,12 +34,6 @@ export interface LinkData {
   [description: string]: string
 }
 
-export interface ResumeDataResponse {
-  id: number
-  created_at: string
-  data: ResumeData
-}
-
 export interface ResumeData {
   links: LinkData
   texts: TextData
