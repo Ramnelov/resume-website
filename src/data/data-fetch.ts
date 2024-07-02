@@ -23,11 +23,7 @@ export async function fetchResumeData() {
  * @returns the public URL of the image
  */
 export async function fetchImageUrl(image: string) {
-  const { data, error } = await supabase.storage.from('images').download(image)
+  const { data } = supabase.storage.from('images').getPublicUrl(image)
 
-  if (error) {
-    throw new Error(error.message)
-  }
-
-  return URL.createObjectURL(data)
+  return data.publicUrl
 }
