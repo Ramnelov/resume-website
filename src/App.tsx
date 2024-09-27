@@ -1,5 +1,14 @@
-import { ParentComponent, Show, Suspense, createResource } from 'solid-js'
-import { Nav } from '~/components/nav'
+import {
+  ParentComponent,
+  Show,
+  Suspense,
+  createResource,
+  createSignal,
+  onCleanup,
+  onMount,
+} from 'solid-js'
+import { MobileNav } from '~/components/mobile-nav'
+import { DesktopNav } from '~/components/desktop-nav'
 import { ColorModeProvider, ColorModeScript, createLocalStorageManager } from '@kobalte/core'
 import { fetchResumeData } from '~/data/data-fetch'
 import { ResumeDataProvider } from '~/data/data-context'
@@ -10,6 +19,18 @@ const App: ParentComponent = (props) => {
   const storageManager = createLocalStorageManager('vite-ui-theme')
 
   const [resumeData] = createResource(fetchResumeData)
+
+  const [isMobile, setIsMobile] = createSignal(window.matchMedia('(max-width: 768px)').matches)
+
+  const updateMedia = () => {
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+  }
+
+  onMount(() => window.matchMedia('(max-width: 768px)').addEventListener('change', updateMedia))
+
+  onCleanup(() =>
+    window.matchMedia('(max-width: 768px)').removeEventListener('change', updateMedia)
+  )
 
   return (
     <>
@@ -25,7 +46,7 @@ const App: ParentComponent = (props) => {
             }
           >
             <ResumeDataProvider value={resumeData}>
-              <Nav />
+              {isMobile() ? <MobileNav /> : <DesktopNav />}
               <PageContainer>
                 <Suspense>{props.children}</Suspense>
               </PageContainer>
