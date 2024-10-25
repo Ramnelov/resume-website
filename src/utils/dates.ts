@@ -42,3 +42,10 @@ export function sortByDate(
 
   return 0
 }
+
+export function dateIsInFuture(date: string): boolean {
+  const dateObj = new Date(date)
+  const currentDate = new Date()
+
+  return dateObj > currentDate
+}
