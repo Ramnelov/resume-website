@@ -8,7 +8,6 @@ import {
   CardDate,
   CardDescription,
   CardHeader,
-  CardLocation,
   CardTitle,
 } from '~/components/ui/card'
 
