@@ -20,7 +20,10 @@ export const ExperienceExpandable: Component<ExperienceExpandableProps> = (props
   return (
     <>
       <AccordionItem value={props.company}>
-        <AccordionTrigger>{props.company}</AccordionTrigger>
+        <AccordionTrigger>
+          {props.company}, {formatDate(props.experiences[props.experiences.length - 1].start_date)}{' '}
+          - {formatDate(props.experiences[0].end_date)}
+        </AccordionTrigger>
         <AccordionContent>
           <For each={props.experiences}>
             {(experience) => (
