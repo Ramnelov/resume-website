@@ -1,6 +1,6 @@
 import { Component, For } from 'solid-js'
 import { AccordionContent, AccordionItem, AccordionTrigger } from '~/components/ui/accordion'
-import { EducationData, ExperienceData } from '~/data/data-types'
+import { EducationData } from '~/data/data-types'
 import { formatDate } from '~/utils/dates'
 import {
   Card,
