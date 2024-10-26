@@ -53,9 +53,9 @@ export const MobileNav: Component = () => {
         }`}
       >
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/education">Education</NavLink>
         <NavLink href="/experience">Experience</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/education">Education</NavLink>
+        {/* <NavLink href="/projects">Projects</NavLink> */}
         <NavLink href="/contact">Contact</NavLink>
       </nav>
     </div>

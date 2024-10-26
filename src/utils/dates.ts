@@ -42,3 +42,16 @@ export function sortByDate(
 
   return 0
 }
+
+/**
+ * Checks if a given date is in the future.
+ *
+ * @param date - The date to check, in a format that can be parsed by the Date constructor.
+ * @returns boolean - Returns true if the date is in the future, false otherwise.
+ */
+export function dateIsInFuture(date: string): boolean {
+  const dateObj = new Date(date)
+  const currentDate = new Date()
+
+  return dateObj > currentDate
+}

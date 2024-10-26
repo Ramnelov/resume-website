@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatDate, sortByDate } from '~/utils/dates'
+import { dateIsInFuture, formatDate, sortByDate } from '~/utils/dates'
 
 describe('formatDate', () => {
   it('returns "Present." for future dates', () => {
@@ -46,5 +46,24 @@ describe('sortByDate', () => {
     const sorted = [...items].sort(sortByDate)
     expect(sorted[0].end_date).toBeNull()
     expect(sorted[1].end_date).toBe('2020-12-31')
+  })
+})
+
+describe('dateIsInFuture', () => {
+  it('returns true for future dates', () => {
+    const futureDate = new Date()
+    futureDate.setFullYear(futureDate.getFullYear() + 1) // Next year
+    expect(dateIsInFuture(futureDate.toISOString())).toBe(true)
+  })
+
+  it('returns false for past dates', () => {
+    const pastDate = new Date()
+    pastDate.setFullYear(pastDate.getFullYear() - 1) // Last year
+    expect(dateIsInFuture(pastDate.toISOString())).toBe(false)
+  })
+
+  it('returns false for the current date', () => {
+    const currentDate = new Date().toISOString()
+    expect(dateIsInFuture(currentDate)).toBe(false)
   })
 })
