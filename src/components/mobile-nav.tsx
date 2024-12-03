@@ -52,11 +52,18 @@ export const MobileNav: Component = () => {
           isOpen() ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/experience">Experience</NavLink>
-        <NavLink href="/education">Education</NavLink>
-        {/* <NavLink href="/projects">Projects</NavLink> */}
-        <NavLink href="/contact">Contact</NavLink>
+        <NavLink href="/" onClick={() => setIsOpen(false)}>
+          Home
+        </NavLink>
+        <NavLink href="/experience" onClick={() => setIsOpen(false)}>
+          Experience
+        </NavLink>
+        <NavLink href="/education" onClick={() => setIsOpen(false)}>
+          Education
+        </NavLink>
+        <NavLink href="/contact" onClick={() => setIsOpen(false)}>
+          Contact
+        </NavLink>
       </nav>
     </div>
   )
