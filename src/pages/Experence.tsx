@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal, For, Show } from 'solid-js'
+import { Component, createEffect, createSignal, For } from 'solid-js'
 import { ExperienceExpandable } from '~/components/experience-expandable'
 import { useResumeData } from '~/data/data-context'
 import { dateIsInFuture, sortByDate } from '~/utils/dates'
@@ -51,7 +51,7 @@ export const Experience: Component = () => {
 
   return (
     <>
-      <Accordion collapsible defaultValue={activeCompanies()}>
+      <Accordion collapsible value={activeCompanies()} onChange={setActiveCompanies}>
         <For each={Object.entries(groupedExperiences())}>
           {([company, experiences]) => (
             <div class="pb-5">

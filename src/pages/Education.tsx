@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal, For, Show } from 'solid-js'
+import { Component, createEffect, createSignal, For } from 'solid-js'
 import { EducationExpandable } from '~/components/education-expandable'
 import { useResumeData } from '~/data/data-context'
 import { dateIsInFuture, sortByDate } from '~/utils/dates'
@@ -25,7 +25,7 @@ export const Education: Component = () => {
   const [groupedEducations, setGroupedEducations] = createSignal<Record<string, EducationData[]>>(
     {}
   )
-  const [activeCompanies, setActiveCompanies] = createSignal<string[]>([])
+  const [activeEducations, setActiveEducations] = createSignal<string[]>([])
 
   createEffect(() => {
     const data = resumeDataResource()
@@ -44,12 +44,12 @@ export const Education: Component = () => {
       )
       .map(([company]) => company)
 
-    setActiveCompanies(active)
+    setActiveEducations(active)
   })
 
   return (
     <>
-      <Accordion collapsible defaultValue={activeCompanies()}>
+      <Accordion collapsible value={activeEducations()} onChange={setActiveEducations}>
         <For each={Object.entries(groupedEducations())}>
           {([location, education]) => (
             <div class="pb-5">
