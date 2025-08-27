@@ -49,17 +49,15 @@ export const Education: Component = () => {
 
   return (
     <>
-      <Show when={activeCompanies().length > 0}>
-        <Accordion collapsible defaultValue={activeCompanies()}>
-          <For each={Object.entries(groupedEducations())}>
-            {([location, education]) => (
-              <div class="pb-5">
-                <EducationExpandable location={location} eductation={education} />
-              </div>
-            )}
-          </For>
-        </Accordion>
-      </Show>
+      <Accordion collapsible defaultValue={activeCompanies()}>
+        <For each={Object.entries(groupedEducations())}>
+          {([location, education]) => (
+            <div class="pb-5">
+              <EducationExpandable location={location} education={education} />
+            </div>
+          )}
+        </For>
+      </Accordion>
     </>
   )
 }

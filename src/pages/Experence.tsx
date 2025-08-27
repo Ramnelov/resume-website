@@ -51,17 +51,15 @@ export const Experience: Component = () => {
 
   return (
     <>
-      <Show when={activeCompanies().length > 0}>
-        <Accordion collapsible defaultValue={activeCompanies()}>
-          <For each={Object.entries(groupedExperiences())}>
-            {([company, experiences]) => (
-              <div class="pb-5">
-                <ExperienceExpandable company={company} experiences={experiences} />
-              </div>
-            )}
-          </For>
-        </Accordion>
-      </Show>
+      <Accordion collapsible defaultValue={activeCompanies()}>
+        <For each={Object.entries(groupedExperiences())}>
+          {([company, experiences]) => (
+            <div class="pb-5">
+              <ExperienceExpandable company={company} experiences={experiences} />
+            </div>
+          )}
+        </For>
+      </Accordion>
     </>
   )
 }

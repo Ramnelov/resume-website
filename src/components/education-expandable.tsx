@@ -13,7 +13,7 @@ import {
 
 interface EducationExpandableProps {
   location: string
-  eductation: EducationData[]
+  education: EducationData[]
 }
 
 export const EducationExpandable: Component<EducationExpandableProps> = (props) => {
@@ -21,11 +21,11 @@ export const EducationExpandable: Component<EducationExpandableProps> = (props) 
     <>
       <AccordionItem value={props.location}>
         <AccordionTrigger>
-          {props.location}, {formatDate(props.eductation[props.eductation.length - 1].start_date)} -{' '}
-          {formatDate(props.eductation[0].end_date)}
+          {props.location}, {formatDate(props.education[props.education.length - 1].start_date)} -{' '}
+          {formatDate(props.education[0].end_date)}
         </AccordionTrigger>
         <AccordionContent>
-          <For each={props.eductation}>
+          <For each={props.education}>
             {(education) => (
               <div class="pb-3">
                 <a href={education.link ?? undefined} target="blank_">
